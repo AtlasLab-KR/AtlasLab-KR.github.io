@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>아틀라스랩 — 의학 실습 교육의 새로운 기준, SlideAtlas</title>
+  <meta name="description" content="SlideAtlas는 의과대학·치과대학·수의대·약대를 위한 디지털 조직·병리학 슬라이드 구독 서비스입니다. 장비 없이 연 400만원부터 시작하세요.">
+  <link rel="icon" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --navy:#0F1F3D;
+      --sky:#5BB8D4;
+      --sky-light:#E8F6FA;
+      --sky-mid:#B8E2EE;
+      --white:#FFFFFF;
+      --gray-50:#F8F9FA;
+      --gray-200:#E9ECEF;
+      --gray-400:#ADB5BD;
+      --gray-600:#6C757D;
+      --gray-800:#343A40;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat','Noto Sans KR',sans-serif;color:var(--navy);background:var(--white);overflow-x:hidden}
+
+    /* ── NAV ── */
+    nav{position:sticky;top:0;z-index:100;background:rgba(15,31,61,0.97);backdrop-filter:blur(8px);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+    .nav-logo img{height:32px;display:block}
+    .nav-links{display:flex;gap:2rem;list-style:none}
+    .nav-links a{color:rgba(255,255,255,0.75);font-size:13px;font-weight:500;text-decoration:none;letter-spacing:0.04em;transition:color 0.2s}
+    .nav-links a:hover{color:var(--sky)}
+    .nav-cta{background:var(--sky);color:var(--navy);padding:8px 20px;border-radius:4px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:0.04em;transition:background 0.2s}
+    .nav-cta:hover{background:#7FCFDF}
+
+    /* ── HERO ── */
+    .hero{background:var(--navy);min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:4rem 2rem}
+    .hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(91,184,212,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(91,184,212,0.05) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+    .hero-bg-circle{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:500px;height:500px;border-radius:50%;border:1px solid rgba(91,184,212,0.08);pointer-events:none}
+    .hero-layout{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:2}
+    .hero-inner{animation:fadeUp 0.8s ease both}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(91,184,212,0.12);border:1px solid rgba(91,184,212,0.3);color:var(--sky);padding:6px 14px;border-radius:100px;font-size:12px;font-weight:600;letter-spacing:0.08em;margin-bottom:1.75rem}
+    .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--sky);animation:pulse 2s infinite}
+    h1{font-family:'Montserrat',sans-serif;font-size:clamp(1.6rem,3vw,2.75rem);font-weight:800;color:var(--white);line-height:1.2;letter-spacing:-0.01em;margin-bottom:1.5rem}
+    .accent{color:var(--sky)}
+    .sub-line{display:block;font-size:clamp(0.85rem,1.5vw,1.1rem);font-weight:500;color:rgba(255,255,255,0.4);letter-spacing:0.06em;margin-top:0.5rem}
+    .hero-sub{font-size:0.95rem;color:rgba(255,255,255,0.65);line-height:1.8;margin-bottom:2.5rem;max-width:480px}
+    .hero-sub strong{color:var(--sky);font-weight:700}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+    .btn-primary{background:var(--sky);color:var(--navy);padding:13px 24px;border-radius:4px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:0.04em;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s}
+    .btn-primary:hover{background:#7FCFDF;transform:translateY(-1px)}
+    .btn-outline{border:1.5px solid rgba(255,255,255,0.3);color:var(--white);padding:13px 24px;border-radius:4px;font-size:13px;font-weight:600;text-decoration:none;letter-spacing:0.04em;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s}
+    .btn-outline:hover{border-color:var(--sky);color:var(--sky)}
+    .hero-stat-row{display:flex;gap:2rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);flex-wrap:wrap}
+    .hero-stat-num{font-size:1.5rem;font-weight:800;color:var(--sky);font-family:'Montserrat',sans-serif}
+    .hero-stat-label{font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px;letter-spacing:0.04em}
+    .hero-stat-sub{font-size:10px;color:rgba(91,184,212,0.5);margin-top:3px;letter-spacing:0.03em}
+
+    /* 뷰어 프레임 */
+    .hero-visual{animation:fadeUp 0.8s ease 0.2s both}
+    .viewer-frame{border-radius:10px;overflow:hidden;border:1px solid rgba(91,184,212,0.2);position:relative;background:rgba(91,184,212,0.04)}
+    .viewer-frame-bar{height:32px;background:rgba(15,31,61,0.9);display:flex;align-items:center;padding:0 12px;gap:6px}
+    .viewer-frame-dot{width:8px;height:8px;border-radius:50%}
+    .viewer-frame img{width:100%;display:block;max-height:390px;object-fit:cover;object-position:top left}
+    .viewer-label{position:absolute;bottom:12px;left:12px;background:rgba(15,31,61,0.85);color:var(--sky);font-size:11px;font-weight:600;padding:4px 10px;border-radius:4px;letter-spacing:0.06em}
+
+    /* ── VALUE BANNER ── */
+    .value-banner{background:var(--sky-light);border-top:3px solid var(--sky);padding:2.5rem 2rem}
+    .value-banner-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+    .value-item{display:flex;align-items:flex-start;gap:12px}
+    .value-icon{width:36px;height:36px;border-radius:6px;background:var(--sky);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .value-icon i{font-size:18px;color:var(--navy)}
+    .value-text strong{font-size:13px;font-weight:700;color:var(--navy);display:block;margin-bottom:3px}
+    .value-text span{font-size:12px;color:var(--gray-600);line-height:1.6}
+
+    /* ── SECTIONS ── */
+    .section{padding:5rem 2rem}
+    .section-inner{max-width:1000px;margin:0 auto}
+    .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.18em;color:var(--sky);text-transform:uppercase;margin-bottom:0.75rem}
+    h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.6rem,3vw,2.25rem);font-weight:800;color:var(--navy);line-height:1.2;letter-spacing:-0.01em;margin-bottom:1rem}
+    .section-lead{font-size:1rem;color:var(--gray-600);line-height:1.8;max-width:640px}
+
+    /* 문제 카드 */
+    .problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:3rem}
+    .problem-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;padding:1.5rem}
+    .problem-icon{width:40px;height:40px;border-radius:8px;background:rgba(91,184,212,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+    .problem-icon i{font-size:20px;color:var(--sky)}
+    .problem-card h3{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:0.5rem}
+    .problem-card p{font-size:13px;color:var(--gray-600);line-height:1.7}
+
+    /* ── PRODUCT ── */
+    .product-section{background:var(--navy);padding:5rem 2rem}
+    .product-inner{max-width:1000px;margin:0 auto}
+    .product-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.18em;color:var(--sky);text-transform:uppercase;margin-bottom:1.5rem}
+    .product-bi-row{display:flex;align-items:center;gap:2rem;margin-bottom:2rem;flex-wrap:wrap}
+    .product-bi{height:80px;display:block}
+    .product-bi-divider{width:1px;height:60px;background:rgba(91,184,212,0.2);flex-shrink:0}
+    .product-bi-desc{font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.75;max-width:500px}
+    .product-bi-desc strong{color:var(--white);font-weight:700}
+    .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem}
+    .feature-card{background:rgba(255,255,255,0.04);border:1px solid rgba(91,184,212,0.15);border-radius:8px;padding:1.75rem;transition:border-color 0.2s}
+    .feature-card:hover{border-color:rgba(91,184,212,0.4)}
+    .feature-num{font-size:11px;font-weight:700;color:var(--sky);letter-spacing:0.15em;margin-bottom:0.75rem}
+    .feature-card h3{font-size:15px;font-weight:700;color:var(--white);margin-bottom:0.5rem}
+    .feature-card p{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.75}
+
+    /* ── COMPARE ── */
+    .compare-section{background:var(--white);padding:5rem 2rem}
+    .compare-inner{max-width:1000px;margin:0 auto}
+    .compare-table-wrap{margin-top:3rem;overflow-x:auto}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    thead tr{background:var(--navy)}
+    thead th{padding:14px 20px;text-align:left;font-size:12px;font-weight:700;letter-spacing:0.1em;color:rgba(255,255,255,0.7)}
+    thead th:first-child{color:var(--white)}
+    thead th.highlight{color:var(--sky)}
+    tbody tr{border-bottom:1px solid var(--gray-200)}
+    tbody tr:nth-child(even){background:var(--gray-50)}
+    td{padding:14px 20px;color:var(--gray-800);vertical-align:middle}
+    td:first-child{font-weight:600;color:var(--navy);font-size:13px}
+    td.highlight{font-weight:700;color:var(--sky)}
+    .check{color:var(--sky);font-size:16px}
+    .cross{color:var(--gray-400)}
+
+    /* ── CONTACT ── */
+    .contact-section{background:var(--gray-50);padding:5rem 2rem}
+    .contact-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start}
+    .contact-info p.lead{font-size:14px;color:var(--gray-600);line-height:1.8;margin-bottom:2rem}
+    .contact-detail{display:flex;align-items:center;gap:10px;margin-bottom:1rem}
+    .contact-detail i{font-size:18px;color:var(--sky);width:24px}
+    .contact-detail span{font-size:14px;color:var(--navy)}
+    .contact-detail a{color:var(--sky);text-decoration:none;font-weight:600}
+    .contact-form{background:var(--white);border:1px solid var(--gray-200);border-radius:10px;padding:2rem}
+    .form-row{margin-bottom:1.25rem}
+    .form-row label{display:block;font-size:12px;font-weight:700;color:var(--navy);letter-spacing:0.06em;margin-bottom:6px}
+    .form-row input,.form-row select,.form-row textarea{width:100%;padding:10px 14px;border:1.5px solid var(--gray-200);border-radius:6px;font-size:14px;font-family:'Montserrat','Noto Sans KR',sans-serif;color:var(--navy);background:var(--white);outline:none;transition:border-color 0.2s}
+    .form-row input:focus,.form-row select:focus,.form-row textarea:focus{border-color:var(--sky)}
+    .form-row textarea{resize:vertical;min-height:100px}
+    .form-submit{width:100%;background:var(--navy);color:var(--white);padding:13px;border:none;border-radius:6px;font-size:14px;font-weight:700;letter-spacing:0.06em;cursor:pointer;font-family:'Montserrat',sans-serif;transition:background 0.2s;display:flex;align-items:center;justify-content:center;gap:8px}
+    .form-submit:hover{background:#1a2f55}
+    .form-note{font-size:11px;color:var(--gray-400);text-align:center;margin-top:10px}
+
+    /* ── FOOTER ── */
+    footer{background:var(--navy);padding:3rem 2rem;color:rgba(255,255,255,0.5);font-size:13px}
+    .footer-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
+    .footer-info{text-align:right}
+    .footer-info p{line-height:1.8}
+    .footer-info a{color:var(--sky);text-decoration:none}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+
+    @media(max-width:800px){
+      .hero-layout{grid-template-columns:1fr}
+      .hero-visual{display:none}
+      .contact-inner{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .hero-stat-row{gap:1.5rem}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="assets/images/logo-navy.png" alt="AtlasLab">
+  </div>
+  <ul class="nav-links">
+    <li><a href="#product">제품 소개</a></li>
+    <li><a href="#compare">비교</a></li>
+    <li><a href="#contact">도입 문의</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">도입 문의</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-circle"></div>
+  <div class="hero-layout">
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        디지털 병리·조직학 교육 플랫폼
+      </div>
+      <h1>
+        의학 실습 교육의<br>새로운 기준
+        <span class="accent" style="display:block;margin-top:0.3rem">SlideAtlas</span>
+        <span class="sub-line">by ATLASLAB</span>
+      </h1>
+      <p class="hero-sub">
+        한 번의 구독으로 전체 학생·교수·조교가 <strong>언제 어디서나</strong> 모든 슬라이드에 접근합니다.<br>
+        장비 구매 없이, <strong>연 400만원부터</strong> 시작하세요.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary"><i class="ti ti-microscope"></i>SlideAtlas 체험하기</a>
+        <a href="#contact" class="btn-outline"><i class="ti ti-mail"></i>도입 문의</a>
+      </div>
+      <div class="hero-stat-row">
+        <div>
+          <div class="hero-stat-num">100종+</div>
+          <div class="hero-stat-label">조직학·병리학 슬라이드</div>
+          <div class="hero-stat-sub">지속 확장 중</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">40년</div>
+          <div class="hero-stat-label">의대 납품 네트워크</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">연 400만원~</div>
+          <div class="hero-stat-label">기관 구독 (장비 불필요)</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="viewer-frame">
+        <div class="viewer-frame-bar">
+          <div class="viewer-frame-dot" style="background:#E74C3C"></div>
+          <div class="viewer-frame-dot" style="background:#F39C12"></div>
+          <div class="viewer-frame-dot" style="background:#2ECC71"></div>
+        </div>
+        <img src="assets/images/viewer-screenshot.png" alt="SlideAtlas 뷰어 — 림프절 정상 H&E 슬라이드">
+        <div class="viewer-label">SlideAtlas™ 뷰어 — 림프절 H&amp;E</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE BANNER -->
+<div class="value-banner">
+  <div class="value-banner-inner">
+    <div class="value-item">
+      <div class="value-icon"><i class="ti ti-users"></i></div>
+      <div class="value-text">
+        <strong>인원 제한 없이 전체 접근</strong>
+        <span>학생 수가 늘어도 추가 비용 없이 전원이 동일한 슬라이드를 사용합니다.</span>
+      </div>
+    </div>
+    <div class="value-item">
+      <div class="value-icon"><i class="ti ti-layout-grid"></i></div>
+      <div class="value-text">
+        <strong>전 종류 슬라이드 구비</strong>
+        <span>예산 걱정 없이 필요한 모든 종류의 슬라이드를 교육 자료로 활용합니다.</span>
+      </div>
+    </div>
+    <div class="value-item">
+      <div class="value-icon"><i class="ti ti-device-laptop"></i></div>
+      <div class="value-text">
+        <strong>언제 어디서나</strong>
+        <span>현미경실 없이도 자습, 예복습, 방학 중 학습이 모두 가능합니다.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow">문제 인식</p>
+    <h2>유리 슬라이드 교육의<br>4가지 한계</h2>
+    <p class="section-lead">국내 의과대학의 조직학·병리학 실습은 아직도 유리 슬라이드에 의존합니다. 매년 반복되는 비용과 불편이 교육 현장의 발목을 잡고 있습니다.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-icon"><i class="ti ti-coin"></i></div>
+        <h3>매년 반복되는 구매 비용</h3>
+        <p>유리 슬라이드는 소모품입니다. 학생 수만큼 구비해야 하고, 파손·분실 시 매년 재구매 비용이 발생합니다.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon"><i class="ti ti-stack"></i></div>
+        <h3>예산 부족으로 불완전한 구비</h3>
+        <p>필요한 모든 종류의 슬라이드를 학생 수에 맞게 구비하려면 수백만 원 이상의 예산이 필요해, 교육 과목별로 부족한 실습 자료 문제가 반복됩니다.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon"><i class="ti ti-clock"></i></div>
+        <h3>시공간 제약</h3>
+        <p>현미경실에서만 가능한 실습으로 자습·예복습이 불가능하고, 방학 중 반복 학습에 한계가 있습니다.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon"><i class="ti ti-building"></i></div>
+        <h3>디지털화의 높은 진입장벽</h3>
+        <p>WSI 스캐너 구매에만 수천만 원이 필요해 대부분의 학교가 디지털 전환을 미루고 있습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT -->
+<section class="product-section" id="product">
+  <div class="product-inner">
+    <p class="product-eyebrow">솔루션</p>
+    <div class="product-bi-row">
+      <img src="assets/images/slideatlas-bi-navy.png" alt="SlideAtlas" class="product-bi">
+      <div class="product-bi-divider"></div>
+      <p class="product-bi-desc">
+        <strong>구독 하나로, 필요한 모든 슬라이드를 전체 구성원이 함께.</strong><br>
+        스캐너·서버·IT 인력 없이, 학교 규모에 상관없이 모든 교육 자료를 웹 브라우저에서 바로 활용하세요.
+      </p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <p class="feature-num">01</p>
+        <h3>종류 제한 없는 슬라이드</h3>
+        <p>조직학·병리학 100종 이상을 구독 하나로 모두 제공하며, 파트너십을 통해 지속적으로 콘텐츠를 확장해 나갑니다.</p>
+      </div>
+      <div class="feature-card">
+        <p class="feature-num">02</p>
+        <h3>전체 구성원 동시 접근</h3>
+        <p>학생, 교수, 조교 모두 동일한 슬라이드를 동시에 열람할 수 있습니다. 인원이 늘어도 추가 비용이 없습니다.</p>
+      </div>
+      <div class="feature-card">
+        <p class="feature-num">03</p>
+        <h3>고해상도 WSI 뷰어</h3>
+        <p>전 배율에서 끊김 없는 스트리밍. 광학현미경 수준의 해상도를 웹 브라우저에서 그대로 경험합니다.</p>
+      </div>
+      <div class="feature-card">
+        <p class="feature-num">04</p>
+        <h3>AI 튜터 내장</h3>
+        <p>슬라이드를 보면서 바로 질문하세요. 조직 구조 설명, 진단 포인트, 퀴즈까지 AI가 함께합니다.</p>
+      </div>
+      <div class="feature-card">
+        <p class="feature-num">05</p>
+        <h3>기관 관리 포털</h3>
+        <p>학생 명단 업로드로 즉시 계정 생성. 구독 현황과 접근 권한을 담당자가 직접 관리합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="compare-section" id="compare">
+  <div class="compare-inner">
+    <p class="eyebrow">비교</p>
+    <h2>SlideAtlas vs 기존 방식</h2>
+    <p class="section-lead">수천만 원짜리 스캐너를 구매하거나 유리 슬라이드를 계속 쓰는 대신, 연 400만원부터 구독으로 즉시 전환하세요.</p>
+    <div class="compare-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>유리 슬라이드</th>
+            <th>경쟁사 (스캐너+플랫폼)</th>
+            <th class="highlight">SlideAtlas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>초기 비용</td><td>슬라이드셋 수백만원</td><td>스캐너 3,000만~5,000만원</td><td class="highlight">0원</td></tr>
+          <tr><td>연간 유지비</td><td>파손·분실 재구매 매년 발생</td><td>유지보수 + 플랫폼 이용료</td><td class="highlight">구독료만</td></tr>
+          <tr><td>슬라이드 종류</td><td>예산 범위 내로 제한</td><td>자체 스캔 분량만</td><td class="highlight">100종 이상, 지속 확장</td></tr>
+          <tr><td>접근 인원</td><td>슬라이드 보유 수만큼</td><td>라이선스 별도 구매</td><td class="highlight">전체 구성원 동시 접근</td></tr>
+          <tr><td>시공간 제약</td><td>현미경실 내에서만</td><td>자체 서버 구축 필요</td><td class="highlight">어디서나 웹 접속</td></tr>
+          <tr><td>AI 튜터</td><td><i class="ti ti-x cross"></i></td><td><i class="ti ti-x cross"></i></td><td><i class="ti ti-check check"></i> 기본 포함</td></tr>
+          <tr><td>파손·분실 위험</td><td>항상 존재</td><td><i class="ti ti-check check"></i></td><td><i class="ti ti-check check"></i> 디지털 영구 보관</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <p class="eyebrow">도입 문의</p>
+      <h2>데모 체험 및<br>도입 상담</h2>
+      <p class="lead">교수님께서 직접 SlideAtlas를 체험해보실 수 있도록 데모 계정을 무료로 제공해 드립니다. 도입 과정에서 필요한 모든 지원을 아틀라스랩이 함께합니다.</p>
+      <div class="contact-detail"><i class="ti ti-mail"></i><span><a href="mailto:boram@atlaslab.co.kr">boram@atlaslab.co.kr</a></span></div>
+      <div class="contact-detail"><i class="ti ti-world"></i><span>atlaslab.co.kr</span></div>
+      <div class="contact-detail"><i class="ti ti-map-pin"></i><span>아틀라스랩 주식회사</span></div>
+    </div>
+    <div class="contact-form">
+      <div class="form-row"><label>소속 기관</label><input type="text" placeholder="예: ○○대학교 의과대학"></div>
+      <div class="form-row"><label>담당자 성함</label><input type="text" placeholder="성함을 입력하세요"></div>
+      <div class="form-row"><label>이메일</label><input type="email" placeholder="연락 가능한 이메일"></div>
+      <div class="form-row">
+        <label>관심 항목</label>
+        <select>
+          <option value="">선택하세요</option>
+          <option>데모 계정 요청</option>
+          <option>구독 요금 문의</option>
+          <option>커스텀 콘텐츠 협의</option>
+          <option>기타 문의</option>
+        </select>
+      </div>
+      <div class="form-row"><label>문의 내용 (선택)</label><textarea placeholder="추가 문의 사항이 있으시면 자유롭게 작성해주세요."></textarea></div>
+      <button class="form-submit" type="button">
+        <i class="ti ti-send"></i>문의 보내기
+      </button>
+      <p class="form-note">영업일 기준 1~2일 내 답변드립니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <img src="assets/images/logo-navy.png" alt="AtlasLab" height="26">
+      <p style="margin-top:8px;font-size:12px">아틀라스랩 주식회사 | Atlas Lab Co., Ltd.</p>
+    </div>
+    <div class="footer-info">
+      <p>대표: 김보람 | <a href="mailto:boram@atlaslab.co.kr">boram@atlaslab.co.kr</a></p>
+      <p>© 2026 Atlas Lab Co., Ltd. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
