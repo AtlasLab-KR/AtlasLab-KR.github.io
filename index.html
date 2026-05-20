@@ -34,7 +34,7 @@
     body{font-family:'Montserrat','Noto Sans KR',sans-serif;color:var(--navy);background:var(--white);overflow-x:hidden}
 
     /* ── NAV ── */
-    nav{position:sticky;top:0;z-index:100;background:rgba(15,31,61,0.97);backdrop-filter:blur(8px);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:96px}
+    nav{position:sticky;top:0;z-index:100;background:rgba(15,31,61,0.97);backdrop-filter:blur(8px);padding:0 1rem;display:flex;align-items:center;justify-content:space-between;height:96px}
     .nav-logo img{height:88px;display:block}
     .nav-links{display:flex;gap:2rem;list-style:none}
     .nav-links a{color:rgba(255,255,255,0.75);font-size:13px;font-weight:500;text-decoration:none;letter-spacing:0.04em;transition:color 0.2s}
@@ -43,10 +43,10 @@
     .nav-cta:hover{background:#7FCFDF}
 
     /* ── HERO ── */
-    .hero{background:var(--navy);min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:4rem 2rem}
+    .hero{background:var(--navy);min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:4rem 1rem}
     .hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(91,184,212,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(91,184,212,0.05) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
     .hero-bg-circle{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:500px;height:500px;border-radius:50%;border:1px solid rgba(91,184,212,0.08);pointer-events:none}
-    .hero-layout{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:2}
+    .hero-layout{max-width:1400px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:2}
     .hero-inner{animation:fadeUp 0.8s ease both}
     .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(91,184,212,0.12);border:1px solid rgba(91,184,212,0.3);color:var(--sky);padding:6px 14px;border-radius:100px;font-size:12px;font-weight:600;letter-spacing:0.08em;margin-bottom:1.75rem}
     .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--sky);animation:pulse 2s infinite}
@@ -74,8 +74,8 @@
     .viewer-label{position:absolute;bottom:12px;left:12px;background:rgba(15,31,61,0.85);color:var(--sky);font-size:11px;font-weight:600;padding:4px 10px;border-radius:4px;letter-spacing:0.06em}
 
     /* ── VALUE BANNER ── */
-    .value-banner{background:var(--sky-light);border-top:3px solid var(--sky);padding:2.5rem 2rem}
-    .value-banner-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+    .value-banner{background:var(--sky-light);border-top:3px solid var(--sky);padding:2.5rem 1rem}
+    .value-banner-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
     .value-item{display:flex;align-items:flex-start;gap:12px}
     .value-icon{width:36px;height:36px;border-radius:6px;background:var(--sky);display:flex;align-items:center;justify-content:center;flex-shrink:0}
     .value-icon i{font-size:18px;color:var(--navy)}
@@ -83,8 +83,8 @@
     .value-text span{font-size:12px;color:var(--gray-600);line-height:1.6}
 
     /* ── SECTIONS ── */
-    .section{padding:5rem 2rem}
-    .section-inner{max-width:1000px;margin:0 auto}
+    .section{padding:5rem 1rem}
+    .section-inner{max-width:1400px;margin:0 auto}
     .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.18em;color:var(--sky);text-transform:uppercase;margin-bottom:0.75rem}
     h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.6rem,3vw,2.25rem);font-weight:800;color:var(--navy);line-height:1.2;letter-spacing:-0.01em;margin-bottom:1rem}
     .section-lead{font-size:1rem;color:var(--gray-600);line-height:1.8;max-width:640px}
@@ -98,8 +98,8 @@
     .problem-card p{font-size:13px;color:var(--gray-600);line-height:1.7}
 
     /* ── PRODUCT ── */
-    .product-section{background:var(--navy);padding:5rem 2rem}
-    .product-inner{max-width:1000px;margin:0 auto}
+    .product-section{background:var(--navy);padding:5rem 1rem}
+    .product-inner{max-width:1400px;margin:0 auto}
     .product-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.18em;color:var(--sky);text-transform:uppercase;margin-bottom:1.5rem}
     .product-bi-row{display:flex;align-items:center;gap:2rem;margin-bottom:2rem;flex-wrap:wrap}
     .product-bi{height:80px;display:block}
@@ -114,8 +114,8 @@
     .feature-card p{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.75}
 
     /* ── COMPARE ── */
-    .compare-section{background:var(--white);padding:5rem 2rem}
-    .compare-inner{max-width:1000px;margin:0 auto}
+    .compare-section{background:var(--white);padding:5rem 1rem}
+    .compare-inner{max-width:1400px;margin:0 auto}
     .compare-table-wrap{margin-top:3rem;overflow-x:auto}
     table{width:100%;border-collapse:collapse;font-size:14px}
     thead tr{background:var(--navy)}
@@ -131,8 +131,8 @@
     .cross{color:var(--gray-400)}
 
     /* ── CONTACT ── */
-    .contact-section{background:var(--gray-50);padding:5rem 2rem}
-    .contact-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start}
+    .contact-section{background:var(--gray-50);padding:5rem 1rem}
+    .contact-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start}
     .contact-info p.lead{font-size:14px;color:var(--gray-600);line-height:1.8;margin-bottom:2rem}
     .contact-detail{display:flex;align-items:center;gap:10px;margin-bottom:1rem}
     .contact-detail i{font-size:18px;color:var(--sky);width:24px}
@@ -149,8 +149,8 @@
     .form-note{font-size:11px;color:var(--gray-400);text-align:center;margin-top:10px}
 
     /* ── FOOTER ── */
-    footer{background:var(--navy);padding:3rem 2rem;color:rgba(255,255,255,0.5);font-size:13px}
-    .footer-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
+    footer{background:var(--navy);padding:3rem 1rem;color:rgba(255,255,255,0.5);font-size:13px}
+    .footer-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
     .footer-info{text-align:right}
     .footer-info p{line-height:1.8}
     .footer-info a{color:var(--sky);text-decoration:none}
@@ -177,6 +177,7 @@
   <ul class="nav-links">
     <li><a href="#product">제품 소개</a></li>
     <li><a href="#compare">비교</a></li>
+    <li><a href="#about">회사 소개</a></li>
     <li><a href="#contact">도입 문의</a></li>
   </ul>
   <a href="#contact" class="nav-cta">도입 문의</a>
@@ -361,6 +362,46 @@
           <tr><td>파손·분실 위험</td><td>항상 존재</td><td><i class="ti ti-check check"></i></td><td><i class="ti ti-check check"></i> 디지털 영구 보관</td></tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about" style="background:var(--navy)">
+  <div class="section-inner">
+    <p class="eyebrow" style="color:var(--sky)">우리의 이야기</p>
+    <h2 style="color:var(--white)">40년의 신뢰를<br>디지털로 잇다</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem;align-items:start">
+      <div>
+        <div style="border-left:3px solid var(--sky);padding-left:1.5rem;margin-bottom:2.5rem">
+          <p style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--sky);margin-bottom:0.5rem">1985</p>
+          <h3 style="font-size:16px;font-weight:700;color:var(--white);margin-bottom:0.75rem">보람바이오텍 창업</h3>
+          <p style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.8">갓 태어난 아들의 이름을 따 '보람바이오텍'을 창업한 아버지는 해외에서 조직학·병리학·기생충학 유리 슬라이드를 수입해 전국 의과대학·치과대학·수의대에 공급해왔습니다. 40년간 쌓아온 전국 해부학교실과의 신뢰가 그 토대입니다.</p>
+        </div>
+        <div style="border-left:3px solid rgba(91,184,212,0.3);padding-left:1.5rem">
+          <p style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--sky);margin-bottom:0.5rem">2026</p>
+          <h3 style="font-size:16px;font-weight:700;color:var(--white);margin-bottom:0.75rem">아틀라스랩 창업 — 디지털 전환</h3>
+          <p style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.8">그 아들 김보람이 아버지의 사업을 디지털로 계승합니다. 40년간 전국 의대에 납품해온 슬라이드를 이제 클라우드 구독 서비스로. 신뢰는 그대로, 형태만 바뀝니다.</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;align-content:start">
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(91,184,212,0.15);border-radius:8px;padding:1.5rem">
+          <div style="font-size:2rem;font-weight:800;color:var(--sky);font-family:'Montserrat',sans-serif">40년</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px">의대 슬라이드 납품 이력</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(91,184,212,0.15);border-radius:8px;padding:1.5rem">
+          <div style="font-size:2rem;font-weight:800;color:var(--sky);font-family:'Montserrat',sans-serif">전국</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px">의대·치대·수의대 네트워크</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(91,184,212,0.15);border-radius:8px;padding:1.5rem">
+          <div style="font-size:2rem;font-weight:800;color:var(--sky);font-family:'Montserrat',sans-serif">3대</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px">조직학·병리학·기생충학</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(91,184,212,0.15);border-radius:8px;padding:1.5rem">
+          <div style="font-size:2rem;font-weight:800;color:var(--sky);font-family:'Montserrat',sans-serif">2026</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px">디지털 전환 원년</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
