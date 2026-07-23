@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>아틀라스랩 — 의학 실습 교육의 새로운 기준, SlideAtlas</title>
-  <meta name="description" content="SlideAtlas는 의과대학·치과대학·수의대·약대를 위한 디지털 조직·병리학 슬라이드 구독 서비스입니다. 장비 없이 연 400만원부터 시작하세요.">
+  <title>아틀라스랩 — 교수님의 디지털 조직학 실습교안, SlideAtlas</title>
+  <meta name="description" content="교수님이 설계한 조직학 수업 커리큘럼을 학생이 그대로 따라갑니다. SlideAtlas는 130여 종 디지털 슬라이드와 AI 튜터를 제공하는 구독 서비스입니다.">
   <link rel="icon" href="assets/images/favicon.png">
-  <meta property="og:title" content="아틀라스랩 — 의학 실습 교육의 새로운 기준, SlideAtlas">
-  <meta property="og:description" content="한 번의 구독으로 전체 학생·교수·조교가 언제 어디서나 모든 슬라이드에 접근합니다. 연 400만원부터 시작하세요.">
+  <meta property="og:title" content="아틀라스랩 — 교수님의 디지털 조직학 실습교안">
+  <meta property="og:description" content="교수님이 설계한 조직학 수업 커리큘럼을 학생이 그대로 따라갑니다. 130여 종 슬라이드, AI 튜터, 장비 없이 바로 시작하세요.">
   <meta property="og:image" content="https://atlaslab.co.kr/assets/images/og-image.png">
   <meta property="og:url" content="https://atlaslab.co.kr">
   <meta property="og:type" content="website">
@@ -19,21 +19,13 @@
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     :root{
-      --navy:#0F1F3D;
-      --sky:#5BB8D4;
-      --sky-light:#E8F6FA;
-      --sky-mid:#B8E2EE;
-      --white:#FFFFFF;
-      --gray-50:#F8F9FA;
-      --gray-200:#E9ECEF;
-      --gray-400:#ADB5BD;
-      --gray-600:#6C757D;
-      --gray-800:#343A40;
+      --navy:#0F1F3D;--sky:#5BB8D4;--sky-light:#E8F6FA;--sky-mid:#B8E2EE;--white:#FFFFFF;
+      --gray-50:#F8F9FA;--gray-200:#E9ECEF;--gray-400:#ADB5BD;--gray-600:#6C757D;--gray-800:#343A40;
     }
     html{scroll-behavior:smooth}
     body{font-family:'Montserrat','Noto Sans KR',sans-serif;color:var(--navy);background:var(--white);overflow-x:hidden}
 
-    /* ── NAV ── */
+    /* NAV */
     nav{position:sticky;top:0;z-index:100;background:rgba(15,31,61,0.97);backdrop-filter:blur(8px);padding:0 1rem;display:flex;align-items:center;justify-content:space-between;height:96px}
     .nav-logo img{height:88px;display:block}
     .nav-links{display:flex;gap:2rem;list-style:none}
@@ -42,7 +34,7 @@
     .nav-cta{background:var(--sky);color:var(--navy);padding:8px 20px;border-radius:4px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:0.04em;transition:background 0.2s}
     .nav-cta:hover{background:#7FCFDF}
 
-    /* ── HERO ── */
+    /* HERO */
     .hero{background:var(--navy);min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:4rem 1rem}
     .hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(91,184,212,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(91,184,212,0.05) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
     .hero-bg-circle{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:500px;height:500px;border-radius:50%;border:1px solid rgba(91,184,212,0.08);pointer-events:none}
@@ -64,8 +56,6 @@
     .hero-stat-num{font-size:1.5rem;font-weight:800;color:var(--sky);font-family:'Montserrat',sans-serif}
     .hero-stat-label{font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px;letter-spacing:0.04em}
     .hero-stat-sub{font-size:10px;color:rgba(91,184,212,0.5);margin-top:3px;letter-spacing:0.03em}
-
-    /* 뷰어 프레임 */
     .hero-visual{animation:fadeUp 0.8s ease 0.2s both}
     .viewer-frame{border-radius:10px;overflow:hidden;border:1px solid rgba(91,184,212,0.2);position:relative;background:rgba(91,184,212,0.04)}
     .viewer-frame-bar{height:32px;background:rgba(15,31,61,0.9);display:flex;align-items:center;padding:0 12px;gap:6px}
@@ -73,7 +63,7 @@
     .viewer-frame img{width:100%;display:block;max-height:1000px;object-fit:cover;object-position:top left}
     .viewer-label{position:absolute;bottom:12px;left:12px;background:rgba(15,31,61,0.85);color:var(--sky);font-size:11px;font-weight:600;padding:4px 10px;border-radius:4px;letter-spacing:0.06em}
 
-    /* ── VALUE BANNER ── */
+    /* VALUE BANNER */
     .value-banner{background:var(--sky-light);border-top:3px solid var(--sky);padding:2.5rem 1rem}
     .value-banner-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
     .value-item{display:flex;align-items:flex-start;gap:12px}
@@ -82,14 +72,14 @@
     .value-text strong{font-size:13px;font-weight:700;color:var(--navy);display:block;margin-bottom:3px}
     .value-text span{font-size:12px;color:var(--gray-600);line-height:1.6}
 
-    /* ── SECTIONS ── */
+    /* SECTIONS */
     .section{padding:5rem 1rem}
     .section-inner{max-width:1400px;margin:0 auto}
     .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.18em;color:var(--sky);text-transform:uppercase;margin-bottom:0.75rem}
     h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.6rem,3vw,2.25rem);font-weight:800;color:var(--navy);line-height:1.2;letter-spacing:-0.01em;margin-bottom:1rem}
     .section-lead{font-size:1rem;color:var(--gray-600);line-height:1.8;max-width:640px}
 
-    /* 문제 카드 */
+    /* PROBLEM */
     .problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:3rem}
     .problem-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;padding:1.5rem}
     .problem-icon{width:40px;height:40px;border-radius:8px;background:rgba(91,184,212,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
@@ -97,40 +87,75 @@
     .problem-card h3{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:0.5rem}
     .problem-card p{font-size:13px;color:var(--gray-600);line-height:1.7}
 
-    /* ── PRODUCT ── */
+    /* PRODUCT */
     .product-section{background:var(--navy);padding:5rem 1rem}
     .product-inner{max-width:1400px;margin:0 auto}
     .product-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.18em;color:var(--sky);text-transform:uppercase;margin-bottom:1.5rem}
-    .product-bi-row{display:flex;align-items:center;gap:2rem;margin-bottom:2rem;flex-wrap:wrap}
+    .product-bi-row{display:flex;align-items:center;gap:2rem;margin-bottom:3rem;flex-wrap:wrap}
     .product-bi{height:80px;display:block}
     .product-bi-divider{width:1px;height:60px;background:rgba(91,184,212,0.2);flex-shrink:0}
     .product-bi-desc{font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.75;max-width:500px}
     .product-bi-desc strong{color:var(--white);font-weight:700}
-    .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem}
-    .feature-card{background:rgba(255,255,255,0.04);border:1px solid rgba(91,184,212,0.15);border-radius:8px;padding:1.75rem;transition:border-color 0.2s}
-    .feature-card:hover{border-color:rgba(91,184,212,0.4)}
-    .feature-num{font-size:11px;font-weight:700;color:var(--sky);letter-spacing:0.15em;margin-bottom:0.75rem}
-    .feature-card h3{font-size:15px;font-weight:700;color:var(--white);margin-bottom:0.5rem}
-    .feature-card p{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.75}
 
-    /* ── COMPARE ── */
-    .compare-section{background:var(--white);padding:5rem 1rem}
+    /* 피처 3개 메인 */
+    .feature-grid-main{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:1.5rem}
+    .feature-card-main{background:rgba(255,255,255,0.06);border:1px solid rgba(91,184,212,0.25);border-radius:8px;padding:2rem;transition:border-color 0.2s}
+    .feature-card-main:hover{border-color:rgba(91,184,212,0.5)}
+    .feature-num{font-size:11px;font-weight:700;color:var(--sky);letter-spacing:0.15em;margin-bottom:0.75rem}
+    .feature-card-main h3{font-size:17px;font-weight:700;color:var(--white);margin-bottom:0.75rem}
+    .feature-card-main p{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.8}
+
+    /* 서브피처 4개 */
+    .subfeature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    .subfeature-card{background:rgba(91,184,212,0.06);border:1px solid rgba(91,184,212,0.12);border-radius:8px;padding:1.25rem;display:flex;align-items:flex-start;gap:12px}
+    .subfeature-icon{width:32px;height:32px;border-radius:6px;background:rgba(91,184,212,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .subfeature-icon i{font-size:16px;color:var(--sky)}
+    .subfeature-card h4{font-size:13px;font-weight:700;color:var(--white);margin-bottom:4px}
+    .subfeature-card p{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.6}
+
+    /* CURRICULUM 섹션 */
+    .curriculum-section{background:var(--gray-50);padding:5rem 1rem}
+    .curriculum-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    .curriculum-text h2{margin-bottom:1rem}
+    .curriculum-text p{font-size:14px;color:var(--gray-600);line-height:1.9;margin-bottom:1rem}
+    .curriculum-text p strong{color:var(--navy);font-weight:700}
+    .curriculum-visual{border-radius:10px;overflow:hidden;border:1px solid var(--gray-200);box-shadow:0 8px 32px rgba(0,0,0,0.08)}
+    .curriculum-visual img{width:100%;display:block}
+
+    /* CONTENTS 섹션 */
+    .contents-section{background:var(--white);padding:5rem 1rem}
+    .contents-inner{max-width:1400px;margin:0 auto}
+    .contents-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:2.5rem;border:1px solid var(--gray-200);border-radius:8px;overflow:hidden}
+    .contents-row{display:contents}
+    .contents-cell{padding:12px 16px;border-bottom:1px solid var(--gray-200);border-right:1px solid var(--gray-200);font-size:13px;color:var(--navy);display:flex;justify-content:space-between;align-items:center}
+    .contents-cell:nth-child(4n){border-right:none}
+    .contents-cell:nth-last-child(-n+4){border-bottom:none}
+    .contents-cell .cnt-name{color:var(--gray-800)}
+    .contents-cell .cnt-num{font-weight:700;color:var(--sky);font-family:'Montserrat',sans-serif;font-size:14px}
+    .contents-note{font-size:12px;color:var(--gray-400);margin-top:1rem;text-align:right}
+
+    /* COMPARE */
+    .compare-section{background:var(--navy);padding:5rem 1rem}
     .compare-inner{max-width:1400px;margin:0 auto}
     .compare-table-wrap{margin-top:3rem;overflow-x:auto}
     table{width:100%;border-collapse:collapse;font-size:14px}
-    thead tr{background:var(--navy)}
-    thead th{padding:14px 20px;text-align:left;font-size:12px;font-weight:700;letter-spacing:0.1em;color:rgba(255,255,255,0.7)}
-    thead th:first-child{color:var(--white)}
-    thead th.highlight{color:var(--sky)}
-    tbody tr{border-bottom:1px solid var(--gray-200)}
-    tbody tr:nth-child(even){background:var(--gray-50)}
-    td{padding:14px 20px;color:var(--gray-800);vertical-align:middle}
-    td:first-child{font-weight:600;color:var(--navy);font-size:13px}
+    thead tr{background:rgba(255,255,255,0.08)}
+    thead th{padding:14px 20px;text-align:left;font-size:12px;font-weight:700;letter-spacing:0.1em;color:rgba(255,255,255,0.5)}
+    thead th:first-child{color:rgba(255,255,255,0.7)}
+    thead th.highlight{color:var(--sky);font-size:13px}
+    tbody tr{border-bottom:1px solid rgba(255,255,255,0.06)}
+    tbody tr:nth-child(even){background:rgba(255,255,255,0.02)}
+    td{padding:14px 20px;color:rgba(255,255,255,0.55);vertical-align:middle}
+    td:first-child{font-weight:600;color:rgba(255,255,255,0.8);font-size:13px}
     td.highlight{font-weight:700;color:var(--sky)}
     .check{color:var(--sky);font-size:16px}
-    .cross{color:var(--gray-400)}
+    .cross{color:rgba(255,255,255,0.2)}
 
-    /* ── CONTACT ── */
+    /* ABOUT */
+    .about-section{background:var(--white);padding:5rem 1rem}
+    .about-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+
+    /* CONTACT */
     .contact-section{background:var(--gray-50);padding:5rem 1rem}
     .contact-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start}
     .contact-info p.lead{font-size:14px;color:var(--gray-600);line-height:1.8;margin-bottom:2rem}
@@ -148,7 +173,7 @@
     .form-submit:hover{background:#1a2f55}
     .form-note{font-size:11px;color:var(--gray-400);text-align:center;margin-top:10px}
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer{background:var(--navy);padding:3rem 1rem;color:rgba(255,255,255,0.5);font-size:13px}
     .footer-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
     .footer-info{text-align:right}
@@ -158,12 +183,23 @@
     @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
 
+    @media(max-width:1024px){
+      .feature-grid-main{grid-template-columns:1fr}
+      .subfeature-grid{grid-template-columns:repeat(2,1fr)}
+      .contents-grid{grid-template-columns:repeat(2,1fr)}
+      .contents-cell:nth-child(2n){border-right:none}
+      .contents-cell:nth-child(4n){border-right:1px solid var(--gray-200)}
+      .curriculum-inner{grid-template-columns:1fr}
+      .about-inner{grid-template-columns:1fr}
+    }
     @media(max-width:800px){
       .hero-layout{grid-template-columns:1fr}
       .hero-visual{display:none}
       .contact-inner{grid-template-columns:1fr}
       .nav-links{display:none}
       .hero-stat-row{gap:1.5rem}
+      .subfeature-grid{grid-template-columns:1fr 1fr}
+      .contents-grid{grid-template-columns:1fr 1fr}
     }
   </style>
 </head>
@@ -176,7 +212,8 @@
   </div>
   <ul class="nav-links">
     <li><a href="#product">제품 소개</a></li>
-    <li><a href="#compare">비교</a></li>
+    <li><a href="#curriculum">커리큘럼</a></li>
+    <li><a href="#contents">수록 콘텐츠</a></li>
     <li><a href="#about">회사 소개</a></li>
     <li><a href="#contact">도입 문의</a></li>
   </ul>
@@ -191,34 +228,33 @@
     <div class="hero-inner">
       <div class="hero-badge">
         <span class="hero-badge-dot"></span>
-        디지털 병리·조직학 교육 플랫폼
+        디지털 조직학·병리학 교육 플랫폼
       </div>
       <h1>
-        의학 실습 교육의<br>새로운 기준
-        <span class="accent" style="display:block;margin-top:0.3rem">SlideAtlas</span>
-        <span class="sub-line">by ATLASLAB</span>
+        교수님의<br>디지털 조직학<br><span class="accent">실습교안</span>
+        <span class="sub-line">슬라이드 아틀라스</span>
       </h1>
       <p class="hero-sub">
-        한 번의 구독으로 전체 학생·교수·조교가 <strong>언제 어디서나</strong> 모든 슬라이드에 접근합니다.<br>
-        장비 구매 없이, <strong>연 400만원부터</strong> 시작하세요.
+        교수님이 설계한 수업 커리큘럼을 <strong>학생이 그대로 따라갑니다.</strong><br>
+        130여 종 디지털 슬라이드와 AI 튜터, 장비 없이 바로 시작하세요.
       </p>
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary"><i class="ti ti-microscope"></i>SlideAtlas 체험하기</a>
+        <a href="https://www.slide-atlas.net" target="_blank" class="btn-primary"><i class="ti ti-microscope"></i>SlideAtlas 체험하기</a>
         <a href="#contact" class="btn-outline"><i class="ti ti-mail"></i>도입 문의</a>
       </div>
       <div class="hero-stat-row">
         <div>
-          <div class="hero-stat-num">100종+</div>
-          <div class="hero-stat-label">조직학·병리학 슬라이드</div>
-          <div class="hero-stat-sub">지속 확장 중</div>
+          <div class="hero-stat-num">130여 종</div>
+          <div class="hero-stat-label">디지털 조직학 슬라이드</div>
+          <div class="hero-stat-sub">지속 업데이트 중</div>
         </div>
         <div>
           <div class="hero-stat-num">40년</div>
           <div class="hero-stat-label">의대 납품 네트워크</div>
         </div>
         <div>
-          <div class="hero-stat-num">연 400만원~</div>
-          <div class="hero-stat-label">기관 구독 (장비 불필요)</div>
+          <div class="hero-stat-num">견적 문의</div>
+          <div class="hero-stat-label">학과 규모에 맞춤 제공</div>
         </div>
       </div>
     </div>
@@ -229,8 +265,8 @@
           <div class="viewer-frame-dot" style="background:#F39C12"></div>
           <div class="viewer-frame-dot" style="background:#2ECC71"></div>
         </div>
-        <img src="assets/images/viewer-screenshot.png" alt="SlideAtlas 뷰어 — 림프절 정상 H&E 슬라이드">
-        <div class="viewer-label">SlideAtlas™ 뷰어 — 림프절 H&amp;E</div>
+        <img src="assets/images/viewer-screenshot.png" alt="SlideAtlas 뷰어 화면">
+        <div class="viewer-label">SlideAtlas™ 뷰어</div>
       </div>
     </div>
   </div>
@@ -240,24 +276,24 @@
 <div class="value-banner">
   <div class="value-banner-inner">
     <div class="value-item">
-      <div class="value-icon"><i class="ti ti-users"></i></div>
+      <div class="value-icon"><i class="ti ti-school"></i></div>
       <div class="value-text">
-        <strong>인원 제한 없이 전체 접근</strong>
-        <span>학생 수가 늘어도 추가 비용 없이 전원이 동일한 슬라이드를 사용합니다.</span>
+        <strong>교수님이 직접 설계하는 실습교안</strong>
+        <span>주차별 슬라이드 배치, 마킹 노트, 커리큘럼을 교수님이 직접 구성합니다.</span>
       </div>
     </div>
     <div class="value-item">
-      <div class="value-icon"><i class="ti ti-layout-grid"></i></div>
+      <div class="value-icon"><i class="ti ti-users"></i></div>
       <div class="value-text">
-        <strong>전 종류 슬라이드 구비</strong>
-        <span>예산 걱정 없이 필요한 모든 종류의 슬라이드를 교육 자료로 활용합니다.</span>
+        <strong>전체 구성원 좌석 단위 구독</strong>
+        <span>교수·조교·학생 누구나 학교 안팎 어디서나 제한 없이 열람합니다.</span>
       </div>
     </div>
     <div class="value-item">
       <div class="value-icon"><i class="ti ti-device-laptop"></i></div>
       <div class="value-text">
-        <strong>언제 어디서나</strong>
-        <span>현미경실 없이도 자습, 예복습, 방학 중 학습이 모두 가능합니다.</span>
+        <strong>설치 불필요</strong>
+        <span>인터넷 브라우저만 있으면 바로 사용 가능합니다. 별도 장비 구매 없음.</span>
       </div>
     </div>
   </div>
@@ -267,99 +303,205 @@
 <section class="section">
   <div class="section-inner">
     <p class="eyebrow">문제 인식</p>
-    <h2>유리 슬라이드 교육의<br>4가지 한계</h2>
-    <p class="section-lead">국내 의과대학의 조직학·병리학 실습은 아직도 유리 슬라이드에 의존합니다. 매년 반복되는 비용과 불편이 교육 현장의 발목을 잡고 있습니다.</p>
+    <h2>기존 디지털 조직학 자료의<br>한계</h2>
+    <p class="section-lead">디지털 조직학 교육은 이미 시작됐습니다. 문제는 교수님이 그것을 수업에 제대로 쓸 수 없다는 겁니다.</p>
     <div class="problem-grid">
       <div class="problem-card">
-        <div class="problem-icon"><i class="ti ti-coin"></i></div>
-        <h3>매년 반복되는 구매 비용</h3>
-        <p>유리 슬라이드는 소모품입니다. 학생 수만큼 구비해야 하고, 파손·분실 시 매년 재구매 비용이 발생합니다.</p>
+        <div class="problem-icon"><i class="ti ti-world"></i></div>
+        <h3>영어로 제공되는 우수한 플랫폼</h3>
+        <p>수백 종의 고품질 디지털 슬라이드를 무료로 제공하는 해외 플랫폼이 있습니다. 그러나 모든 콘텐츠가 영어로 되어 있고, 교수님의 커리큘럼에 맞춰 슬라이드를 배치하거나, 학생 열람 현황을 파악하거나, 한국어로 질문에 답하는 기능은 없습니다. 교수님들이 수업에 적극적으로 활용하기에는 많은 제약이 있습니다. 우리는 이런 답답함을 해결하고 싶었습니다.</p>
       </div>
       <div class="problem-card">
-        <div class="problem-icon"><i class="ti ti-stack"></i></div>
-        <h3>예산 부족으로 불완전한 구비</h3>
-        <p>필요한 모든 종류의 슬라이드를 학생 수에 맞게 구비하려면 수백만 원 이상의 예산이 필요해, 교육 과목별로 부족한 실습 자료 문제가 반복됩니다.</p>
+        <div class="problem-icon"><i class="ti ti-book"></i></div>
+        <h3>도서관에서 구독 중이지만, 교수님과 학생 모두 불편합니다</h3>
+        <p>기관에서 이미 구독 중인 디지털 조직학 자료가 있어도 교수님이 수업에 직접 활용하기는 쉽지 않습니다. 도서관 시스템을 통한 복잡한 접속 과정을 거쳐야 하고, 커리큘럼에 맞춰 교수님이 슬라이드를 배치하거나 e-book을 이용하는 학생들이 얼마나 되는지 확인할 방법도 없습니다. 결국 자료는 충분히 활용되지 못하고, 교수님은 별도로 슬라이드를 마련해 직접 스캔하고, 학생들은 또 다른 뷰어를 설치해 각자 로그인합니다. 수업 내용은 여전히 필기에만 의존합니다.</p>
       </div>
       <div class="problem-card">
-        <div class="problem-icon"><i class="ti ti-clock"></i></div>
-        <h3>시공간 제약</h3>
-        <p>현미경실에서만 가능한 실습으로 자습·예복습이 불가능하고, 방학 중 반복 학습에 한계가 있습니다.</p>
-      </div>
-      <div class="problem-card">
-        <div class="problem-icon"><i class="ti ti-building"></i></div>
-        <h3>디지털화의 높은 진입장벽</h3>
-        <p>WSI 스캐너 구매에만 수천만 원이 필요해 대부분의 학교가 디지털 전환을 미루고 있습니다.</p>
+        <div class="problem-icon"><i class="ti ti-scan"></i></div>
+        <h3>자체 스캐너로 디지털화했지만, 더 쉬운 방법이 있습니다</h3>
+        <p>자체 스캐너로 슬라이드를 디지털화해 수업에 활용하는 학교가 늘고 있습니다. 그러나 새로운 슬라이드가 필요할 때마다 슬라이드를 주문하고, 받고, 스캔하는 과정이 반복됩니다. SlideAtlas를 구독하면 필요한 슬라이드를 요청하는 것만으로 충분합니다. 디지털 배포권 검토를 통과한 슬라이드는 무료로 추가해 드립니다. 교수님이 한 번 교안 작업을 해두면, 학생들은 언제 어디서나 슬라이드별 교안을 열람하고, 주차별로 배치된 순서대로 학습하며, 시험 대비도 같은 플랫폼에서 할 수 있습니다.</p>
       </div>
     </div>
+    <p style="margin-top:2.5rem;font-size:14px;color:var(--gray-600);line-height:1.8;max-width:700px">SlideAtlas는 슬라이드를 제공하는 것을 넘어, 교수님이 직접 수업을 설계하고 운영할 수 있는 도구를 함께 제공합니다.</p>
   </div>
 </section>
 
 <!-- PRODUCT -->
 <section class="product-section" id="product">
   <div class="product-inner">
-    <p class="product-eyebrow">솔루션</p>
+    <p class="product-eyebrow">SlideAtlas 솔루션</p>
     <div class="product-bi-row">
       <img src="assets/images/slideatlas-bi-navy.png" alt="SlideAtlas" class="product-bi">
       <div class="product-bi-divider"></div>
       <p class="product-bi-desc">
-        <strong>구독 하나로, 필요한 모든 슬라이드를 전체 구성원이 함께.</strong><br>
-        스캐너·서버·IT 인력 없이, 학교 규모에 상관없이 모든 교육 자료를 웹 브라우저에서 바로 활용하세요.
+        <strong>교수님이 설계한 조직학 수업 커리큘럼을 학생이 그대로 따라갑니다.</strong><br>
+        스캐너·서버·IT 인력 없이, 웹 브라우저 하나로 전체 수업을 운영하세요.
       </p>
     </div>
-    <div class="feature-grid">
-      <div class="feature-card">
+
+    <!-- 메인 피처 3개 -->
+    <div class="feature-grid-main">
+      <div class="feature-card-main">
         <p class="feature-num">01</p>
-        <h3>종류 제한 없는 슬라이드</h3>
-        <p>조직학·병리학 100종 이상을 구독 하나로 모두 제공하며, 파트너십을 통해 지속적으로 콘텐츠를 확장해 나갑니다.</p>
+        <h3>필수 디지털 슬라이드 130여 종</h3>
+        <p>지속적인 큐레이션을 통해 계속 업데이트됩니다. 필요하신 슬라이드는 검토 후 무료로 추가해 드립니다. 디지털 배포권을 확보한 정식 라이선스 슬라이드만 제공합니다.</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card-main">
         <p class="feature-num">02</p>
-        <h3>전체 구성원 동시 접근</h3>
-        <p>학생, 교수, 조교 모두 동일한 슬라이드를 동시에 열람할 수 있습니다. 인원이 늘어도 추가 비용이 없습니다.</p>
+        <h3>교수님의 커리큘럼 구현</h3>
+        <p>교수님이 수업을 개설해 주차별로 슬라이드를 배치하고 교안을 작성하면, 학생은 그 교안을 슬라이드 화면에서 그대로 열어 학습합니다. AI 튜터가 그 교안을 바탕으로 학생의 질문에 답하고 퀴즈를 제공합니다.</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card-main">
         <p class="feature-num">03</p>
-        <h3>고해상도 WSI 뷰어</h3>
-        <p>전 배율에서 끊김 없는 스트리밍. 광학현미경 수준의 해상도를 웹 브라우저에서 그대로 경험합니다.</p>
-      </div>
-      <div class="feature-card">
-        <p class="feature-num">04</p>
-        <h3>AI 튜터 내장</h3>
-        <p>슬라이드를 보면서 바로 질문하세요. 조직 구조 설명, 진단 포인트, 퀴즈까지 AI가 함께합니다.</p>
-      </div>
-      <div class="feature-card">
-        <p class="feature-num">05</p>
-        <h3>기관 관리 포털</h3>
-        <p>학생 명단 업로드로 즉시 계정 생성. 구독 현황과 접근 권한을 담당자가 직접 관리합니다.</p>
+        <h3>학습 통계 대시보드</h3>
+        <p>학생들의 이용 통계를 리포트(엑셀/PDF)로 제공하여 학내 보고 및 증빙자료로 제출할 수 있습니다.</p>
       </div>
     </div>
+
+    <!-- 서브피처 4개 -->
+    <div class="subfeature-grid">
+      <div class="subfeature-card">
+        <div class="subfeature-icon"><i class="ti ti-pencil"></i></div>
+        <div>
+          <h4>마킹 노트</h4>
+          <p>교수님이 슬라이드에 남긴 강의 노트가 학생들에게 그대로 배포됩니다.</p>
+        </div>
+      </div>
+      <div class="subfeature-card">
+        <div class="subfeature-icon"><i class="ti ti-map"></i></div>
+        <div>
+          <h4>구조 가이드</h4>
+          <p>표준 조직학 지식에 따른 개별 슬라이드 관찰 가이드로 학습을 지원합니다.</p>
+        </div>
+      </div>
+      <div class="subfeature-card">
+        <div class="subfeature-icon"><i class="ti ti-message-circle"></i></div>
+        <div>
+          <h4>질문하기</h4>
+          <p>슬라이드를 보면서 바로 AI 튜터에게 질문합니다.</p>
+        </div>
+      </div>
+      <div class="subfeature-card">
+        <div class="subfeature-icon"><i class="ti ti-help-circle"></i></div>
+        <div>
+          <h4>퀴즈</h4>
+          <p>교수님의 교안과 조직학 지식에서 한국어 퀴즈가 출제됩니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="curriculum-section" id="curriculum">
+  <div class="curriculum-inner">
+    <div class="curriculum-text">
+      <p class="eyebrow">커리큘럼</p>
+      <h2>교수님이 설계한<br>조직학 수업 커리큘럼을<br>학생이 그대로 따라갑니다.</h2>
+      <p>교수님이 개설한 수업에 <strong>주차별로 슬라이드를 배치</strong>할 수 있습니다.</p>
+      <p>학생은 수업 등록 클릭 한 번으로, <strong>주차별 슬라이드를 커리큘럼대로 학습</strong>합니다.</p>
+    </div>
+    <div class="curriculum-visual">
+      <img src="assets/images/lms-screenshot.png" alt="SlideAtlas LMS — 주차별 커리큘럼 구성 화면">
+    </div>
+  </div>
+</section>
+
+<!-- CONTENTS -->
+<section class="contents-section" id="contents">
+  <div class="contents-inner">
+    <p class="eyebrow">수록 콘텐츠</p>
+    <h2>130여 종 디지털 슬라이드</h2>
+    <p class="section-lead">조직학 전 과목을 아우르는 슬라이드를 제공합니다. 슬라이드 구성은 지속적으로 업데이트됩니다.</p>
+    <div class="contents-grid">
+      <div class="contents-cell"><span class="cnt-name">상피조직</span><span class="cnt-num">11</span></div>
+      <div class="contents-cell"><span class="cnt-name">외피계</span><span class="cnt-num">5</span></div>
+      <div class="contents-cell"><span class="cnt-name">결합조직</span><span class="cnt-num">6</span></div>
+      <div class="contents-cell"><span class="cnt-name">소화기계</span><span class="cnt-num">23</span></div>
+      <div class="contents-cell"><span class="cnt-name">연골·뼈</span><span class="cnt-num">7</span></div>
+      <div class="contents-cell"><span class="cnt-name">구강·치아조직</span><span class="cnt-num">4</span></div>
+      <div class="contents-cell"><span class="cnt-name">혈액·조혈</span><span class="cnt-num">4</span></div>
+      <div class="contents-cell"><span class="cnt-name">호흡기계</span><span class="cnt-num">6</span></div>
+      <div class="contents-cell"><span class="cnt-name">근육조직</span><span class="cnt-num">7</span></div>
+      <div class="contents-cell"><span class="cnt-name">비뇨기계</span><span class="cnt-num">4</span></div>
+      <div class="contents-cell"><span class="cnt-name">신경조직</span><span class="cnt-num">12</span></div>
+      <div class="contents-cell"><span class="cnt-name">내분비계</span><span class="cnt-num">6</span></div>
+      <div class="contents-cell"><span class="cnt-name">심혈관계</span><span class="cnt-num">9</span></div>
+      <div class="contents-cell"><span class="cnt-name">생식계</span><span class="cnt-num">20</span></div>
+      <div class="contents-cell"><span class="cnt-name">림프계</span><span class="cnt-num">5</span></div>
+      <div class="contents-cell"><span class="cnt-name">특수감각기관</span><span class="cnt-num">5</span></div>
+    </div>
+    <p class="contents-note">슬라이드 구성은 지속적으로 업데이트됩니다.</p>
   </div>
 </section>
 
 <!-- COMPARE -->
 <section class="compare-section" id="compare">
   <div class="compare-inner">
-    <p class="eyebrow">비교</p>
-    <h2>SlideAtlas vs 기존 방식</h2>
-    <p class="section-lead">수천만 원짜리 스캐너를 구매하거나 유리 슬라이드를 계속 쓰는 대신, 연 400만원부터 구독으로 즉시 전환하세요.</p>
+    <p class="eyebrow" style="color:var(--sky)">비교</p>
+    <h2 style="color:var(--white)">SlideAtlas vs 기존 솔루션</h2>
+    <p class="section-lead" style="color:rgba(255,255,255,0.55)">디지털 조직학 자료는 이미 여러 형태로 존재합니다. 교수님의 수업 운영 도구로서 어떤 차이가 있는지 확인하세요.</p>
     <div class="compare-table-wrap">
       <table>
         <thead>
           <tr>
             <th>항목</th>
-            <th>유리 슬라이드</th>
-            <th>경쟁사 (스캐너+플랫폼)</th>
+            <th>해외 무료 플랫폼</th>
+            <th>국내 e-book형 자료</th>
+            <th>자체 스캐너 운영</th>
             <th class="highlight">SlideAtlas</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>초기 비용</td><td>슬라이드셋 수백만원</td><td>스캐너 3,000만~5,000만원</td><td class="highlight">0원</td></tr>
-          <tr><td>연간 유지비</td><td>파손·분실 재구매 매년 발생</td><td>유지보수 + 플랫폼 이용료</td><td class="highlight">구독료만</td></tr>
-          <tr><td>슬라이드 종류</td><td>예산 범위 내로 제한</td><td>자체 스캔 분량만</td><td class="highlight">100종 이상, 지속 확장</td></tr>
-          <tr><td>접근 인원</td><td>슬라이드 보유 수만큼</td><td>라이선스 별도 구매</td><td class="highlight">전체 구성원 동시 접근</td></tr>
-          <tr><td>시공간 제약</td><td>현미경실 내에서만</td><td>자체 서버 구축 필요</td><td class="highlight">어디서나 웹 접속</td></tr>
-          <tr><td>AI 튜터</td><td><i class="ti ti-x cross"></i></td><td><i class="ti ti-x cross"></i></td><td><i class="ti ti-check check"></i> 기본 포함</td></tr>
-          <tr><td>파손·분실 위험</td><td>항상 존재</td><td><i class="ti ti-check check"></i></td><td><i class="ti ti-check check"></i> 디지털 영구 보관</td></tr>
+          <tr>
+            <td>제공 언어</td>
+            <td>영어</td>
+            <td>한국어</td>
+            <td>해당 없음</td>
+            <td class="highlight">한국어</td>
+          </tr>
+          <tr>
+            <td>접속 편의성</td>
+            <td>웹 직접 접속</td>
+            <td>도서관 시스템 경유</td>
+            <td>별도 뷰어 설치·로그인</td>
+            <td class="highlight">웹 브라우저만으로</td>
+          </tr>
+          <tr>
+            <td>교수 커리큘럼 구현</td>
+            <td><i class="ti ti-x cross"></i></td>
+            <td><i class="ti ti-x cross"></i></td>
+            <td><i class="ti ti-x cross"></i></td>
+            <td><i class="ti ti-check check"></i> 주차별 배치·마킹 노트</td>
+          </tr>
+          <tr>
+            <td>슬라이드 요청 추가</td>
+            <td><i class="ti ti-x cross"></i></td>
+            <td><i class="ti ti-x cross"></i></td>
+            <td>직접 주문·스캔 필요</td>
+            <td class="highlight">검토 후 무료 추가</td>
+          </tr>
+          <tr>
+            <td>AI 튜터 (한국어)</td>
+            <td><i class="ti ti-x cross"></i></td>
+            <td><i class="ti ti-x cross"></i></td>
+            <td><i class="ti ti-x cross"></i></td>
+            <td><i class="ti ti-check check"></i> 기본 포함</td>
+          </tr>
+          <tr>
+            <td>학생 열람 통계</td>
+            <td><i class="ti ti-x cross"></i></td>
+            <td>공식 미제공</td>
+            <td><i class="ti ti-x cross"></i></td>
+            <td><i class="ti ti-check check"></i> 엑셀/PDF 리포트</td>
+          </tr>
+          <tr>
+            <td>교수 마킹 → AI 출제</td>
+            <td><i class="ti ti-x cross"></i></td>
+            <td><i class="ti ti-x cross"></i></td>
+            <td><i class="ti ti-x cross"></i></td>
+            <td><i class="ti ti-check check"></i> 교수 교안 기반 퀴즈</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -367,26 +509,24 @@
 </section>
 
 <!-- ABOUT -->
-<section class="section" id="about" style="background:var(--navy)">
-  <div class="section-inner">
-    <p class="eyebrow" style="color:var(--sky)">우리의 이야기</p>
-    <h2 style="color:var(--white)">40년의 신뢰를<br>디지털로 잇다</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem;align-items:start">
-      <div>
-        <div style="border-left:3px solid var(--sky);padding-left:1.5rem;margin-bottom:2.5rem">
-          <p style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--sky);margin-bottom:0.5rem">1985</p>
-          <h3 style="font-size:16px;font-weight:700;color:var(--white);margin-bottom:0.75rem">보람바이오텍 창업</h3>
-          <p style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.8">갓 태어난 아들의 이름을 따 '보람바이오텍'을 창업한 아버지는 해외에서 조직학·병리학·기생충학 유리 슬라이드를 수입해 전국 의과대학·치과대학·수의대에 공급해왔습니다. 40년간 쌓아온 전국 해부학교실과의 신뢰가 그 토대입니다.</p>
-        </div>
-        <div style="border-left:3px solid rgba(91,184,212,0.3);padding-left:1.5rem">
-          <p style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--sky);margin-bottom:0.5rem">2026</p>
-          <h3 style="font-size:16px;font-weight:700;color:var(--white);margin-bottom:0.75rem">아틀라스랩 창업 — 디지털 전환</h3>
-          <p style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.8">그 아들 김보람이 아버지의 사업을 디지털로 계승합니다. 40년간 전국 의대에 납품해온 슬라이드를 이제 클라우드 구독 서비스로. 40년간 쌓아온 그 신뢰를 바탕으로, 더욱 편리하고 혁신적인 방법으로 교수님과 학생들의 교육 환경을 개선해 나가겠습니다.</p>
-        </div>
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <div>
+      <p class="eyebrow">우리의 이야기</p>
+      <h2>40년의 신뢰를<br>디지털로 잇다</h2>
+      <div style="border-left:3px solid var(--sky);padding-left:1.5rem;margin:2rem 0 2.5rem">
+        <p style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--sky);margin-bottom:0.5rem">1985</p>
+        <h3 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:0.75rem">보람바이오텍 창업</h3>
+        <p style="font-size:14px;color:var(--gray-600);line-height:1.8">갓 태어난 아들의 이름을 따 '보람바이오텍'을 창업한 아버지는 해외에서 조직학·병리학·기생충학 유리 슬라이드를 수입해 전국 의과대학·치과대학·수의대에 공급해왔습니다. 40년간 쌓아온 전국 해부학교실과의 신뢰가 그 토대입니다.</p>
       </div>
-      <div style="position:relative;border-radius:10px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.4)">
-        <img src="assets/images/boram-slide.png" alt="보람슬라이드 — 40년의 기록" style="width:100%;display:block;object-fit:cover;max-height:460px">
+      <div style="border-left:3px solid rgba(91,184,212,0.3);padding-left:1.5rem">
+        <p style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--sky);margin-bottom:0.5rem">2026</p>
+        <h3 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:0.75rem">아틀라스랩 창업 — 디지털 전환</h3>
+        <p style="font-size:14px;color:var(--gray-600);line-height:1.8">그 아들 김보람이 아버지의 사업을 디지털로 계승합니다. 40년간 전국 의대에 납품해온 슬라이드를 이제 클라우드 구독 서비스로. 40년간 쌓아온 그 신뢰를 바탕으로, 더욱 편리하고 혁신적인 방법으로 교수님과 학생들의 교육 환경을 개선해 나가겠습니다.</p>
       </div>
+    </div>
+    <div style="position:relative;border-radius:10px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.15)">
+      <img src="assets/images/boram-slide.png" alt="보람슬라이드 — 40년의 기록" style="width:100%;display:block;object-fit:cover;max-height:460px">
     </div>
   </div>
 </section>
@@ -396,23 +536,25 @@
   <div class="contact-inner">
     <div class="contact-info">
       <p class="eyebrow">도입 문의</p>
-      <h2>데모 체험 및<br>도입 상담</h2>
-      <p class="lead">교수님께서 직접 SlideAtlas를 체험해보실 수 있도록 데모 계정을 무료로 제공해 드립니다. 도입 과정에서 필요한 모든 지원을 아틀라스랩이 함께합니다.</p>
+      <h2>견적 및<br>시연 문의</h2>
+      <p class="lead">요청하시면 샘플 슬라이드 뷰어 체험 링크를 보내드립니다. 학과 방문 시연도 가능합니다. 편하게 연락 주십시오.</p>
+      <div class="contact-detail"><i class="ti ti-phone"></i><span><a href="tel:01038109491">010-3810-9491</a></span></div>
       <div class="contact-detail"><i class="ti ti-mail"></i><span><a href="mailto:boram@atlaslab.co.kr">boram@atlaslab.co.kr</a></span></div>
-      <div class="contact-detail"><i class="ti ti-world"></i><span>atlaslab.co.kr</span></div>
-      <div class="contact-detail"><i class="ti ti-map-pin"></i><span>아틀라스랩 주식회사</span></div>
+      <div class="contact-detail"><i class="ti ti-world"></i><span><a href="https://www.atlaslab.co.kr">www.atlaslab.co.kr</a></span></div>
+      <div class="contact-detail"><i class="ti ti-map-pin"></i><span>서울시 강남구 역삼로 114 현죽빌딩 8층</span></div>
     </div>
     <div class="contact-form">
       <div class="form-row"><label>소속 기관</label><input type="text" placeholder="예: ○○대학교 의과대학"></div>
       <div class="form-row"><label>담당자 성함</label><input type="text" placeholder="성함을 입력하세요"></div>
       <div class="form-row"><label>이메일</label><input type="email" placeholder="연락 가능한 이메일"></div>
+      <div class="form-row"><label>연락처</label><input type="tel" placeholder="010-0000-0000"></div>
       <div class="form-row">
         <label>관심 항목</label>
         <select>
           <option value="">선택하세요</option>
-          <option>데모 계정 요청</option>
-          <option>구독 요금 문의</option>
-          <option>커스텀 콘텐츠 협의</option>
+          <option>샘플 체험 링크 요청</option>
+          <option>학과 방문 시연 요청</option>
+          <option>구독 견적 문의</option>
           <option>기타 문의</option>
         </select>
       </div>
@@ -429,11 +571,13 @@
 <footer>
   <div class="footer-inner">
     <div>
-      <img src="assets/images/logo-navy.png" alt="AtlasLab" height="150">
+      <img src="assets/images/logo-navy.png" alt="AtlasLab" height="44">
       <p style="margin-top:8px;font-size:12px">아틀라스랩 주식회사 | Atlas Lab Co., Ltd.</p>
+      <p style="font-size:12px;margin-top:4px">서울시 강남구 역삼로 114 현죽빌딩 8층</p>
     </div>
     <div class="footer-info">
-      <p>대표: 김보람 | <a href="mailto:boram@atlaslab.co.kr">boram@atlaslab.co.kr</a></p>
+      <p>대표: 김보람 | <a href="tel:01038109491">010-3810-9491</a></p>
+      <p><a href="mailto:boram@atlaslab.co.kr">boram@atlaslab.co.kr</a></p>
       <p>© 2026 Atlas Lab Co., Ltd. All rights reserved.</p>
     </div>
   </div>
